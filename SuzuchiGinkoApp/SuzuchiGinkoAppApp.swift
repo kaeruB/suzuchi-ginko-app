@@ -2,7 +2,7 @@
 //  SuzuchiGinkoAppApp.swift
 //  SuzuchiGinkoApp
 //
-//  Created by Agata Bogacz on 22/07/2023.
+//  Created by Agata Sasaki on 22/07/2023.
 //
 
 import SwiftUI
