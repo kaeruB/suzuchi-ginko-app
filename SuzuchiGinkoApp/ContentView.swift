@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
         VStack {
             SummaryLayout()
+                .padding(.bottom, 48)
+                .padding(.top, 48)
+            
+            History()
+            
         }
         .padding()
     }
@@ -19,3 +25,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+

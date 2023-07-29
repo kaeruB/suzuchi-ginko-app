@@ -13,9 +13,9 @@ struct SummaryLayout: View {
     var personWithoutDebt: String
     
     init() {
-        let UserIds = [String](TransactionsSummaryMock.usersDetails.keys)
-        let moneyPayedByFirstUser: Double = TransactionsSummaryMock.summary[UserIds[0]] ?? 0
-        let moneyPayedBySecondUser: Double = TransactionsSummaryMock.summary[UserIds[1]] ?? 0
+        let UserIds = [String](TransactionsSummary.TransactionsSummaryMock.usersDetails.keys)
+        let moneyPayedByFirstUser: Double = TransactionsSummary.TransactionsSummaryMock.summary[UserIds[0]] ?? 0
+        let moneyPayedBySecondUser: Double = TransactionsSummary.TransactionsSummaryMock.summary[UserIds[1]] ?? 0
         
         difference = String(format: "%.2f", abs(moneyPayedBySecondUser - moneyPayedByFirstUser))
         personWithDebt = moneyPayedByFirstUser < moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
@@ -28,14 +28,15 @@ struct SummaryLayout: View {
             
             VStack {
                 HStack {
-                    Image(TransactionsSummaryMock.usersDetails[personWithDebt]!.avatar)
+                    Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.avatar)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 64)
                     
                     Text("\(difference) YEN")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     
-                    Image(TransactionsSummaryMock.usersDetails[personWithoutDebt]!.avatar)
+                    Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.avatar)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 64)
@@ -48,7 +49,7 @@ struct SummaryLayout: View {
            
             }
             
-            Text("\(TransactionsSummaryMock.usersDetails[personWithDebt]!.name) should return \(difference) to \(TransactionsSummaryMock.usersDetails[personWithoutDebt]!.name)")
+            Text("\(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.name) should return \(difference) to \(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.name)")
         }
     }
 }
