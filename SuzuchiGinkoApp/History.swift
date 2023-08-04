@@ -13,7 +13,7 @@ struct History: View {
     
     init() {
         timestampToTransactionsMapping = createTimestampToTransactionsMapping(transactions: TransactionsSummary.TransactionsSummaryMock.transactions)
-        timestamps = [String](timestampToTransactionsMapping.keys)
+        timestamps = [String](timestampToTransactionsMapping.keys).sorted(by: >)
     }
     
     
