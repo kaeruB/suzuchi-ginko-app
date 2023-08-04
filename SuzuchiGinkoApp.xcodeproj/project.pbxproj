@@ -16,6 +16,8 @@
 		DC650AB52A6B48A8001E882B /* TransactionsSummaryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC650AB42A6B48A8001E882B /* TransactionsSummaryMock.swift */; };
 		DC650AB72A6B6D10001E882B /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC650AB62A6B6D10001E882B /* utils.swift */; };
 		DC650AB92A6B73CA001E882B /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC650AB82A6B73CA001E882B /* HistoryListItem.swift */; };
+		DC85C48F2A7DB83D005CCE43 /* PairsSummaryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85C48E2A7DB83D005CCE43 /* PairsSummaryMock.swift */; };
+		DC85C4912A7DB8A0005CCE43 /* PairsSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85C4902A7DB89F005CCE43 /* PairsSummary.swift */; };
 		DC8BCEC32A6C994400453A31 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BCEC22A6C994400453A31 /* HistoryList.swift */; };
 		DC8BCEC52A6C995200453A31 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BCEC42A6C995200453A31 /* History.swift */; };
 		DC9A87032A75DDDA0098DA5A /* TransactionEditModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */; };
@@ -35,6 +37,8 @@
 		DC650AB42A6B48A8001E882B /* TransactionsSummaryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSummaryMock.swift; sourceTree = "<group>"; };
 		DC650AB62A6B6D10001E882B /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		DC650AB82A6B73CA001E882B /* HistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItem.swift; sourceTree = "<group>"; };
+		DC85C48E2A7DB83D005CCE43 /* PairsSummaryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsSummaryMock.swift; sourceTree = "<group>"; };
+		DC85C4902A7DB89F005CCE43 /* PairsSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsSummary.swift; sourceTree = "<group>"; };
 		DC8BCEC22A6C994400453A31 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		DC8BCEC42A6C995200453A31 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditModal.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				DC9A87062A7637AE0098DA5A /* Transactions.swift */,
 				DC650AB02A6B42EB001E882B /* TransactionsSummary.swift */,
 				DC650AB42A6B48A8001E882B /* TransactionsSummaryMock.swift */,
+				DC85C4902A7DB89F005CCE43 /* PairsSummary.swift */,
+				DC85C48E2A7DB83D005CCE43 /* PairsSummaryMock.swift */,
 				DC8BCEC42A6C995200453A31 /* History.swift */,
 				DC8BCEC22A6C994400453A31 /* HistoryList.swift */,
 				DC650AB82A6B73CA001E882B /* HistoryListItem.swift */,
@@ -180,7 +186,9 @@
 				DC9A87072A7637AF0098DA5A /* Transactions.swift in Sources */,
 				DC650AB52A6B48A8001E882B /* TransactionsSummaryMock.swift in Sources */,
 				DC650AB92A6B73CA001E882B /* HistoryListItem.swift in Sources */,
+				DC85C48F2A7DB83D005CCE43 /* PairsSummaryMock.swift in Sources */,
 				DC650AB72A6B6D10001E882B /* utils.swift in Sources */,
+				DC85C4912A7DB8A0005CCE43 /* PairsSummary.swift in Sources */,
 				DC650AA12A6B3D9A001E882B /* SuzuchiGinkoAppApp.swift in Sources */,
 				DC650AB12A6B42EB001E882B /* TransactionsSummary.swift in Sources */,
 			);

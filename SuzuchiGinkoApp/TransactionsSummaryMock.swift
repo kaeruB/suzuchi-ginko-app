@@ -78,3 +78,36 @@ extension TransactionsSummary {
         ]
     )
 }
+
+
+extension TransactionsSummary {
+    static let TransactionsSummaryMock2 = TransactionsSummary(
+        transactions: [
+            Transaction(
+                pairId: "userWithId1_userWithId3",
+                amount: 200,
+                userWhoPaid: "userWithId1",
+                category: Category.Shopping,
+                description: "Onigiri",
+                timestamp: 1695168000000
+            ),
+            Transaction(
+                pairId: "userWithId1_userWithId3",
+                amount: 10,
+                userWhoPaid: "userWithId3",
+                category: Category.Shopping,
+                description: "Candy",
+                timestamp: 1694649600000
+            )
+        ],
+        totalTransactions: 2,
+        summary: [
+            "userWithId1": 200,
+            "userWithId3": 10
+        ],
+        usersDetails: [
+            "userWithId1": User(name: "User1", avatar: "avatar1"),
+            "userWithId3": User(name: "User3", avatar: "avatar2"),
+        ]
+    )
+}
