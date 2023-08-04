@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SummaryLayout: View {
+    @State var showTransactionsLayout = false
+    
     var difference: String
     var personWithDebt: String
     var personWithoutDebt: String
@@ -24,33 +26,46 @@ struct SummaryLayout: View {
     
     
     var body: some View {
-        VStack {
-            
+        Button {
+            showTransactionsLayout.toggle()
+        } label: {
+        
             VStack {
-                HStack {
-                    Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.avatar)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 64)
-                    
-                    Text("\(difference) YEN")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    
-                    Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.avatar)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 64)
+                
+                VStack {
+                    HStack {
+                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.avatar)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 64)
                         
+                        Image(systemName: "yensign")
+                            .foregroundColor(.black)
+                            .font(.title2)
+                        
+                        Text("\(difference)")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    
+                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.avatar)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 64)
+                            
+                    }
+                    
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(.black)
+                        .padding(.top, -24)
+               
                 }
                 
-                Image(systemName: "arrow.right")
-                    .foregroundColor(.black)
-                    .padding(.top, -24)
-           
+                Text("\(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.name) should return \(difference) yen to \(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.name)")
             }
-            
-            Text("\(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.name) should return \(difference) to \(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.name)")
         }
+        .sheet(isPresented: $showTransactionsLayout, content: {
+            Transactions()
+        })
+        .foregroundColor(.black)
     }
 }
 

@@ -11,15 +11,16 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            SummaryLayout()
-                .padding(.bottom, 48)
-                .padding(.top, 48)
             
-            History()
+            Header()
+                .padding(.bottom, 30)
             
+            PairsLayout()
+                .padding()
         }
-        .padding()
+        
     }
+
 }
 
 #Preview {

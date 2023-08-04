@@ -18,6 +18,10 @@
 		DC650AB92A6B73CA001E882B /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC650AB82A6B73CA001E882B /* HistoryListItem.swift */; };
 		DC8BCEC32A6C994400453A31 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BCEC22A6C994400453A31 /* HistoryList.swift */; };
 		DC8BCEC52A6C995200453A31 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BCEC42A6C995200453A31 /* History.swift */; };
+		DC9A87032A75DDDA0098DA5A /* TransactionEditModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */; };
+		DC9A87052A7634DD0098DA5A /* PairsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87042A7634DD0098DA5A /* PairsLayout.swift */; };
+		DC9A87072A7637AF0098DA5A /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87062A7637AE0098DA5A /* Transactions.swift */; };
+		DC9A87092A7638B00098DA5A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87082A7638B00098DA5A /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		DC650AB82A6B73CA001E882B /* HistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItem.swift; sourceTree = "<group>"; };
 		DC8BCEC22A6C994400453A31 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		DC8BCEC42A6C995200453A31 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditModal.swift; sourceTree = "<group>"; };
+		DC9A87042A7634DD0098DA5A /* PairsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsLayout.swift; sourceTree = "<group>"; };
+		DC9A87062A7637AE0098DA5A /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		DC9A87082A7638B00098DA5A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +75,16 @@
 			children = (
 				DC650AA02A6B3D9A001E882B /* SuzuchiGinkoAppApp.swift */,
 				DC650AA22A6B3D9A001E882B /* ContentView.swift */,
+				DC9A87082A7638B00098DA5A /* Header.swift */,
+				DC9A87042A7634DD0098DA5A /* PairsLayout.swift */,
 				DC650AAE2A6B3FA6001E882B /* SummaryLayout.swift */,
+				DC9A87062A7637AE0098DA5A /* Transactions.swift */,
 				DC650AB02A6B42EB001E882B /* TransactionsSummary.swift */,
 				DC650AB42A6B48A8001E882B /* TransactionsSummaryMock.swift */,
-				DC650AB82A6B73CA001E882B /* HistoryListItem.swift */,
-				DC8BCEC22A6C994400453A31 /* HistoryList.swift */,
 				DC8BCEC42A6C995200453A31 /* History.swift */,
+				DC8BCEC22A6C994400453A31 /* HistoryList.swift */,
+				DC650AB82A6B73CA001E882B /* HistoryListItem.swift */,
+				DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */,
 				DC650AB62A6B6D10001E882B /* utils.swift */,
 				DC650AA42A6B3D9D001E882B /* Assets.xcassets */,
 				DC650AA62A6B3D9D001E882B /* Preview Content */,
@@ -159,9 +171,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC8BCEC52A6C995200453A31 /* History.swift in Sources */,
+				DC9A87092A7638B00098DA5A /* Header.swift in Sources */,
 				DC650AAF2A6B3FA6001E882B /* SummaryLayout.swift in Sources */,
 				DC650AA32A6B3D9A001E882B /* ContentView.swift in Sources */,
+				DC9A87052A7634DD0098DA5A /* PairsLayout.swift in Sources */,
 				DC8BCEC32A6C994400453A31 /* HistoryList.swift in Sources */,
+				DC9A87032A75DDDA0098DA5A /* TransactionEditModal.swift in Sources */,
+				DC9A87072A7637AF0098DA5A /* Transactions.swift in Sources */,
 				DC650AB52A6B48A8001E882B /* TransactionsSummaryMock.swift in Sources */,
 				DC650AB92A6B73CA001E882B /* HistoryListItem.swift in Sources */,
 				DC650AB72A6B6D10001E882B /* utils.swift in Sources */,
