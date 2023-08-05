@@ -10,7 +10,7 @@ import SwiftUI
 struct Transactions: View {
     var body: some View {
         VStack {
-            SummaryLayout(
+            Summary(
                 pairsSummary: PairsSummary.PairsSummaryMock.pairsSummaries["userWithId1_userWithId2"]!,
                 pairId: "userWithId1_userWithId2",
                 usersDetails: PairsSummary.PairsSummaryMock.usersDetails

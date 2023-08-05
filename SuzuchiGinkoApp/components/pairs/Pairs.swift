@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PairsLayout: View {
+struct Pairs: View {
     @State private var userId: String = ""
     
     let pairsSummaries: [String: [String : Double]]
@@ -55,7 +55,7 @@ struct PairsLayout: View {
                             NavigationLink(
                                 destination: Transactions()
                             ) {
-                                SummaryLayout(
+                                Summary(
                                     pairsSummary: pairsSummaries[pairsKeys[i]]!,
                                     pairId: pairsKeys[i],
                                     usersDetails: PairsSummary.PairsSummaryMock.usersDetails
@@ -81,7 +81,7 @@ struct PairsLayout: View {
 }
 
 #Preview {
-    PairsLayout(
+    Pairs(
         pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
         pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
     )

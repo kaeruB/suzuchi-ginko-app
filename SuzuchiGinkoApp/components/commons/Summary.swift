@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SummaryLayout: View {
+struct Summary: View {
     @State var showTransactionsLayout = false
     
     var difference: String
@@ -66,7 +66,7 @@ struct SummaryLayout: View {
 }
 
 #Preview {
-    SummaryLayout(
+    Summary(
         pairsSummary: PairsSummary.PairsSummaryMock.pairsSummaries["userWithId1_userWithId2"]!,
         pairId: "userWithId1_userWithId2",
         usersDetails: PairsSummary.PairsSummaryMock.usersDetails

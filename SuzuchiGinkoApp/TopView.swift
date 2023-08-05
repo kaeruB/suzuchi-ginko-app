@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TopView: View {
 
     var body: some View {
         VStack {
             
             Header()
 
-            PairsLayout(
+            Pairs(
                 pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
                 pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
             )
@@ -27,6 +27,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TopView()
 }
 

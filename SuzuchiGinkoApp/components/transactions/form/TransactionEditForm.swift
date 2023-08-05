@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TransactionEditModal: View {
+struct TransactionEditForm: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var description: String = ""
@@ -178,5 +178,5 @@ struct TransactionEditModal: View {
 }
 
 #Preview {
-    TransactionEditModal()
+    TransactionEditForm()
 }
