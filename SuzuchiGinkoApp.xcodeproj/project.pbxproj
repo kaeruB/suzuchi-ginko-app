@@ -24,6 +24,7 @@
 		DC9A87052A7634DD0098DA5A /* PairsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87042A7634DD0098DA5A /* PairsLayout.swift */; };
 		DC9A87072A7637AF0098DA5A /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87062A7637AE0098DA5A /* Transactions.swift */; };
 		DC9A87092A7638B00098DA5A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A87082A7638B00098DA5A /* Header.swift */; };
+		DCF0AC002A7E0967005397F8 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF0ABFF2A7E0967005397F8 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		DC9A87042A7634DD0098DA5A /* PairsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsLayout.swift; sourceTree = "<group>"; };
 		DC9A87062A7637AE0098DA5A /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		DC9A87082A7638B00098DA5A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		DCF0ABFF2A7E0967005397F8 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				DC650AB82A6B73CA001E882B /* HistoryListItem.swift */,
 				DC9A87022A75DDDA0098DA5A /* TransactionEditModal.swift */,
 				DC650AB62A6B6D10001E882B /* utils.swift */,
+				DCF0ABFF2A7E0967005397F8 /* constants.swift */,
 				DC650AA42A6B3D9D001E882B /* Assets.xcassets */,
 				DC650AA62A6B3D9D001E882B /* Preview Content */,
 			);
@@ -183,6 +186,7 @@
 				DC9A87052A7634DD0098DA5A /* PairsLayout.swift in Sources */,
 				DC8BCEC32A6C994400453A31 /* HistoryList.swift in Sources */,
 				DC9A87032A75DDDA0098DA5A /* TransactionEditModal.swift in Sources */,
+				DCF0AC002A7E0967005397F8 /* constants.swift in Sources */,
 				DC9A87072A7637AF0098DA5A /* Transactions.swift in Sources */,
 				DC650AB52A6B48A8001E882B /* TransactionsSummaryMock.swift in Sources */,
 				DC650AB92A6B73CA001E882B /* HistoryListItem.swift in Sources */,

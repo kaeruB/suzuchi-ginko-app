@@ -15,8 +15,14 @@ struct ContentView: View {
             Header()
                 .padding(.bottom, 30)
             
-            PairsLayout()
+
+            
+            PairsLayout(
+                pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
+                pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
+            )
                 .padding()
+            
         }
         
     }

@@ -10,6 +10,9 @@ import SwiftUI
 struct PairsLayout: View {
     @State private var userId: String = ""
     
+    let pairsSummaries: [String: [String : Double]]
+    let pairsKeys: [String]
+    
     var body: some View {
         
         VStack {
@@ -51,9 +54,15 @@ struct PairsLayout: View {
             }
             .padding(.bottom, 40)
             
-            SummaryLayout()
-                .padding(.bottom, 40)
-            SummaryLayout()
+            VStack(spacing: 40) {
+                ForEach(0..<pairsKeys.count) { i in
+                    SummaryLayout(
+                        pairsSummary: pairsSummaries[pairsKeys[i]]!,
+                        pairId: pairsKeys[i],
+                        usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+                    )
+                }
+            }
             
             Spacer()
             
@@ -63,5 +72,8 @@ struct PairsLayout: View {
 }
 
 #Preview {
-    PairsLayout()
+    PairsLayout(
+        pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
+        pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
+    )
 }

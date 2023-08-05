@@ -14,8 +14,6 @@ struct HistoryList: View {
     init(temporaryTimestamp: String, transactions: [Transaction]) {
         self.temporaryTimestamp = temporaryTimestamp
         self.transactions = transactions
-        
-        print(transactions)
     }
     
     var body: some View {

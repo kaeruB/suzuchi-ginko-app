@@ -11,17 +11,22 @@ struct SummaryLayout: View {
     @State var showTransactionsLayout = false
     
     var difference: String
-    var personWithDebt: String
-    var personWithoutDebt: String
+    var personWithDebtDetails: User
+    var personWithoutDebtDetails: User
     
-    init() {
-        let UserIds = [String](TransactionsSummary.TransactionsSummaryMock.usersDetails.keys)
-        let moneyPayedByFirstUser: Double = TransactionsSummary.TransactionsSummaryMock.summary[UserIds[0]] ?? 0
-        let moneyPayedBySecondUser: Double = TransactionsSummary.TransactionsSummaryMock.summary[UserIds[1]] ?? 0
+    
+    init(pairsSummary: [String : Double], pairId: String, usersDetails: [String : User]) {
+        let UserIds = decodePairIdToUserIds(pairId: pairId)
+        let moneyPayedByFirstUser: Double = pairsSummary[UserIds[0]] ?? 0
+        let moneyPayedBySecondUser: Double = pairsSummary[UserIds[1]] ?? 0
+        
+        let personWithDebt: String = moneyPayedByFirstUser < moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
+        let personWithoutDebt: String = moneyPayedByFirstUser > moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
+        
+        personWithDebtDetails = PairsSummary.PairsSummaryMock.usersDetails[personWithDebt]!
+        personWithoutDebtDetails = PairsSummary.PairsSummaryMock.usersDetails[personWithoutDebt]!
         
         difference = String(format: "%.2f", abs(moneyPayedBySecondUser - moneyPayedByFirstUser))
-        personWithDebt = moneyPayedByFirstUser < moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
-        personWithoutDebt = moneyPayedByFirstUser > moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
     }
     
     
@@ -34,7 +39,7 @@ struct SummaryLayout: View {
                 
                 VStack {
                     HStack {
-                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.avatar)
+                        Image(personWithDebtDetails.avatar)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 64)
@@ -46,7 +51,7 @@ struct SummaryLayout: View {
                         Text("\(difference)")
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     
-                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.avatar)
+                        Image(personWithoutDebtDetails.avatar)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 64)
@@ -59,7 +64,7 @@ struct SummaryLayout: View {
                
                 }
                 
-                Text("\(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithDebt]!.name) should return \(difference) yen to \(TransactionsSummary.TransactionsSummaryMock.usersDetails[personWithoutDebt]!.name)")
+                Text("\(personWithDebtDetails.name) should return \(difference) yen to \(personWithoutDebtDetails.name)")
             }
         }
         .sheet(isPresented: $showTransactionsLayout, content: {
@@ -70,5 +75,9 @@ struct SummaryLayout: View {
 }
 
 #Preview {
-    SummaryLayout()
+    SummaryLayout(
+        pairsSummary: PairsSummary.PairsSummaryMock.pairsSummaries["userWithId1_userWithId2"]!,
+        pairId: "userWithId1_userWithId2",
+        usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+    )
 }

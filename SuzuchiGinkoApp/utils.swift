@@ -31,3 +31,7 @@ func parseDateObjToDateString(timestamp: Double) -> String {
     formatter.dateFormat = "yyyy-MM-dd"
     return formatter.string(from: nsDate as Date)
 }
+
+func decodePairIdToUserIds(pairId: String) -> [String] {
+    return pairId.components(separatedBy: PAIR_ID_SEPARATOR)
+}
