@@ -29,6 +29,7 @@ struct History: View {
                 
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

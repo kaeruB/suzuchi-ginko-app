@@ -48,7 +48,6 @@ struct PairsLayout: View {
                     .cornerRadius(10)
                 }
                 .padding(.bottom, 30)
-                .padding(.top, 30)
                 
                 
                 VStack(spacing: 40) {
@@ -66,6 +65,14 @@ struct PairsLayout: View {
                 }
             }
             .navigationTitle("Dashboard")
+            .navigationBarHidden(true)
+//            .toolbar {
+//                Button(action: {}) {
+//                    Image(systemName: "plus")
+//                }
+//                .accessibilityLabel("New Pair")
+//            }
+            
             Spacer()
         }
 

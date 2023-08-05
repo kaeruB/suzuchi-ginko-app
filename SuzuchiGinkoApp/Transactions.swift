@@ -15,13 +15,11 @@ struct Transactions: View {
                 pairId: "userWithId1_userWithId2",
                 usersDetails: PairsSummary.PairsSummaryMock.usersDetails
             )
-                .padding(.bottom, 48)
-                .padding(.top, 48)
+                .padding(.bottom, 16)
             
             History()
             
         }
-        .padding()
     }
 }
 

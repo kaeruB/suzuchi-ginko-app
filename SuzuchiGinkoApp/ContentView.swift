@@ -12,14 +12,13 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-//            Header()
-//                .padding(.bottom, 30)
+            Header()
 
             PairsLayout(
                 pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
                 pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
             )
-                .padding()
+            .padding()
             
         }
         
