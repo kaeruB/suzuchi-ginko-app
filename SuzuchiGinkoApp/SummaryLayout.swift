@@ -31,12 +31,7 @@ struct SummaryLayout: View {
     
     
     var body: some View {
-        Button {
-            showTransactionsLayout.toggle()
-        } label: {
-        
             VStack {
-                
                 VStack {
                     HStack {
                         Image(personWithDebtDetails.avatar)
@@ -66,11 +61,7 @@ struct SummaryLayout: View {
                 
                 Text("\(personWithDebtDetails.name) should return \(difference) yen to \(personWithoutDebtDetails.name)")
             }
-        }
-        .sheet(isPresented: $showTransactionsLayout, content: {
-            Transactions()
-        })
-        .foregroundColor(.black)
+            .foregroundColor(.black)
     }
 }
 

@@ -14,60 +14,62 @@ struct PairsLayout: View {
     let pairsKeys: [String]
     
     var body: some View {
-        
-        VStack {
-            HStack {
-                Text("Create new dashboard")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Spacer()
-            }
-            
-            HStack {
-                Text("Email")
+        NavigationStack {
+            VStack {
                 
-                Spacer()
-                
-                TextField(
-                    "Transaction description",
-                    text: $userId
-                )
-                //                        .focused($emailFieldIsFocused)
-                .onSubmit {
-                    //                            validate(name: description)
-                }
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .border(.secondary)
-                .textFieldStyle(.roundedBorder)
-                .padding(.leading, 8)
-                
-                Button {
-                    //
-                } label: {
-                    Image(systemName: "person.badge.plus")
-                }
-                .font(.title3)
-                .background(.gray)
-                .foregroundColor(.white)
-                .buttonStyle(.bordered)
-                .cornerRadius(10)
-            }
-            .padding(.bottom, 40)
-            
-            VStack(spacing: 40) {
-                ForEach(0..<pairsKeys.count) { i in
-                    SummaryLayout(
-                        pairsSummary: pairsSummaries[pairsKeys[i]]!,
-                        pairId: pairsKeys[i],
-                        usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+                HStack {
+                    Text("Email")
+                    
+                    Spacer()
+                    
+                    TextField(
+                        "Transaction description",
+                        text: $userId
                     )
+                    //                        .focused($emailFieldIsFocused)
+                    .onSubmit {
+                        //                            validate(name: description)
+                    }
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .border(.secondary)
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.leading, 8)
+                    
+                    Button {
+                        //
+                    } label: {
+                        Image(systemName: "person.badge.plus")
+                    }
+                    .font(.title3)
+                    .background(.gray)
+                    .foregroundColor(.white)
+                    .buttonStyle(.bordered)
+                    .cornerRadius(10)
+                }
+                .padding(.bottom, 30)
+                .padding(.top, 30)
+                
+                
+                VStack(spacing: 40) {
+                        ForEach(0..<pairsKeys.count) { i in
+                            NavigationLink(
+                                destination: Transactions()
+                            ) {
+                                SummaryLayout(
+                                    pairsSummary: pairsSummaries[pairsKeys[i]]!,
+                                    pairId: pairsKeys[i],
+                                    usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+                                )
+                            }
+                        }
                 }
             }
-            
+            .navigationTitle("Dashboard")
             Spacer()
-            
         }
-        .padding(.bottom, 30)
+
+        
     }
 }
 
