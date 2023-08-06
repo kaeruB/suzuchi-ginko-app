@@ -46,7 +46,10 @@ struct HistoryListItem: View {
             }
         }
         .sheet(isPresented: $showTransactionModal, content: {
-            TransactionEditForm()
+            TransactionEditForm(
+                transaction: transaction,
+                usersDateils: usersDateils
+            )
         })
         .padding()
     }

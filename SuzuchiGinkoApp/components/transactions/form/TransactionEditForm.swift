@@ -14,6 +14,9 @@ struct TransactionEditForm: View {
     @State private var date = Date()
 //    @FocusState private var emailFieldIsFocused: Bool = false
     
+    let transaction: Transaction
+    let usersDateils: [String : User]
+    
     var body: some View {
         VStack {
             HStack {
@@ -178,5 +181,8 @@ struct TransactionEditForm: View {
 }
 
 #Preview {
-    TransactionEditForm()
+    TransactionEditForm(
+        transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
+        usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
+    )
 }
