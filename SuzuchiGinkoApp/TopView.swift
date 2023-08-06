@@ -11,7 +11,6 @@ struct TopView: View {
 
     var body: some View {
         VStack {
-            
             Header()
 
             Pairs(
@@ -19,11 +18,8 @@ struct TopView: View {
                 pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
             )
             .padding()
-            
         }
-        
     }
-
 }
 
 #Preview {

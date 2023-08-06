@@ -14,7 +14,7 @@ struct Summary: View {
     var personWithDebtDetails: User
     var personWithoutDebtDetails: User
     
-    
+//    todo rename to pairSummary
     init(pairsSummary: [String : Double], pairId: String, usersDetails: [String : User]) {
         let UserIds = decodePairIdToUserIds(pairId: pairId)
         let moneyPayedByFirstUser: Double = pairsSummary[UserIds[0]] ?? 0
@@ -23,8 +23,8 @@ struct Summary: View {
         let personWithDebt: String = moneyPayedByFirstUser < moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
         let personWithoutDebt: String = moneyPayedByFirstUser > moneyPayedBySecondUser ? UserIds[0] : UserIds[1]
         
-        personWithDebtDetails = PairsSummary.PairsSummaryMock.usersDetails[personWithDebt]!
-        personWithoutDebtDetails = PairsSummary.PairsSummaryMock.usersDetails[personWithoutDebt]!
+        personWithDebtDetails = usersDetails[personWithDebt]!
+        personWithoutDebtDetails = usersDetails[personWithoutDebt]!
         
         difference = String(format: "%.2f", abs(moneyPayedBySecondUser - moneyPayedByFirstUser))
     }
