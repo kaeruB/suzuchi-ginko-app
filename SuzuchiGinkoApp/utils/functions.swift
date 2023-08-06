@@ -35,3 +35,10 @@ func parseDateObjToDateString(timestamp: Double) -> String {
 func decodePairIdToUserIds(pairId: String) -> [String] {
     return pairId.components(separatedBy: PAIR_ID_SEPARATOR)
 }
+
+func provideTransactionsMock(pariId: String) -> TransactionsSummary {
+    if (pariId == "userWithId1_userWithId2") {
+        return TransactionsSummary.TransactionsSummaryMock
+    }
+    return TransactionsSummary.TransactionsSummaryMock2
+}

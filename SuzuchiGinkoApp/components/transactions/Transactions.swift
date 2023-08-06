@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct Transactions: View {
-    
-    let pairSummary: [String : Double]
     let pairId: String
-    let usersDetails: [String : User]
+    var transactionsSummary: TransactionsSummary
+    
+    init(pairId: String) {
+        self.pairId = pairId
+        
+        // todo replace this with query
+        transactionsSummary = provideTransactionsMock(pariId: pairId)
+    }
     
     var body: some View {
         VStack {
             Summary(
-                pairsSummary: pairSummary,
+                pairsSummary: transactionsSummary.summary,
                 pairId: pairId,
-                usersDetails: usersDetails
+                usersDetails: transactionsSummary.usersDetails
             )
                 .padding(.bottom, 16)
             
-            History()
+            History(transactionsSummary: transactionsSummary)
         }
     }
 }
 
 #Preview {
     Transactions(
-        pairSummary: PairsSummary.PairsSummaryMock.pairsSummaries["userWithId1_userWithId2"]!,
-        pairId: "userWithId1_userWithId2",
-        usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+        pairId: "userWithId1_userWithId2"
     )
 }

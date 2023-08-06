@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct History: View {
+    let transactionsSummary: TransactionsSummary
+    
     var timestampToTransactionsMapping: [String: [Transaction]]
     var timestamps: [String]
     
-    init() {
-        timestampToTransactionsMapping = createTimestampToTransactionsMapping(transactions: TransactionsSummary.TransactionsSummaryMock.transactions)
+    init(transactionsSummary: TransactionsSummary) {
+        self.transactionsSummary = transactionsSummary
+        timestampToTransactionsMapping = createTimestampToTransactionsMapping(transactions: transactionsSummary.transactions)
         timestamps = [String](timestampToTransactionsMapping.keys).sorted(by: >)
     }
     
@@ -23,7 +26,8 @@ struct History: View {
                 ForEach(0..<timestamps.count) { i in
                     HistoryList(
                         temporaryTimestamp: String(timestamps[i]),
-                        transactions: timestampToTransactionsMapping[String(timestamps[i])]!
+                        transactions: timestampToTransactionsMapping[String(timestamps[i])]!,
+                        usersDateils: transactionsSummary.usersDetails
                     )
                 }
                 
@@ -34,5 +38,5 @@ struct History: View {
 }
 
 #Preview {
-    History()
+    History(transactionsSummary: TransactionsSummary.TransactionsSummaryMock)
 }

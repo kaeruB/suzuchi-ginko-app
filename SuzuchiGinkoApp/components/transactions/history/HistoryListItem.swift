@@ -11,6 +11,7 @@ struct HistoryListItem: View {
     @State var showTransactionModal = false
     
     let transaction: Transaction
+    let usersDateils: [String : User]
     
     var body: some View {
         Button {
@@ -19,9 +20,7 @@ struct HistoryListItem: View {
             HStack {
                 HStack {
                     ZStack {
-                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails[
-                            TransactionsSummary.TransactionsSummaryMock.transactions[0].userWhoPaid
-                        ]!.avatar)
+                        Image(usersDateils[transaction.userWhoPaid]!.avatar)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 40)
@@ -54,5 +53,8 @@ struct HistoryListItem: View {
 }
 
 #Preview {
-    HistoryListItem(transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0])
+    HistoryListItem(
+        transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
+        usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
+    )
 }

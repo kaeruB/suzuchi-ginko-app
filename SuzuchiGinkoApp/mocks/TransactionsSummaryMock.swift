@@ -77,10 +77,7 @@ extension TransactionsSummary {
             "userWithId2": User(name: "User2", avatar: "avatar6"),
         ]
     )
-}
-
-
-extension TransactionsSummary {
+    
     static let TransactionsSummaryMock2 = TransactionsSummary(
         transactions: [
             Transaction(

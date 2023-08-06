@@ -53,11 +53,7 @@ struct Pairs: View {
                 VStack(spacing: 40) {
                         ForEach(0..<pairsKeys.count) { i in
                             NavigationLink(
-                                destination: Transactions(
-                                    pairSummary: pairsSummaries[pairsKeys[i]]!,
-                                    pairId: pairsKeys[i],
-                                    usersDetails: PairsSummary.PairsSummaryMock.usersDetails
-                                )
+                                destination: Transactions(pairId: pairsKeys[i])
                             ) {
                                 Summary(
                                     pairsSummary: pairsSummaries[pairsKeys[i]]!,
