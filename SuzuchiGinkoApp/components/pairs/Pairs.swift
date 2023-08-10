@@ -66,12 +66,6 @@ struct Pairs: View {
             }
             .navigationTitle("Dashboard")
             .navigationBarHidden(true)
-//            .toolbar {
-//                Button(action: {}) {
-//                    Image(systemName: "plus")
-//                }
-//                .accessibilityLabel("New Pair")
-//            }
             
             Spacer()
         }

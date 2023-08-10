@@ -29,6 +29,12 @@ struct Transactions: View {
             
             History(transactionsSummary: transactionsSummary)
         }
+        .toolbar {
+            Button(action: {}) {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New Transaction")
+        }
     }
 }
 
