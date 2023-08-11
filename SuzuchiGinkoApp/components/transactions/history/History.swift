@@ -11,22 +11,19 @@ struct History: View {
     let transactionsSummary: TransactionsSummary
     
     var timestampToTransactionsMapping: [String: [Transaction]]
-    var timestamps: [String]
     
     init(transactionsSummary: TransactionsSummary) {
         self.transactionsSummary = transactionsSummary
         timestampToTransactionsMapping = createTimestampToTransactionsMapping(transactions: transactionsSummary.transactions)
-        timestamps = [String](timestampToTransactionsMapping.keys).sorted(by: >)
     }
-    
-    
+     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(0..<timestamps.count) { i in
+                ForEach(Array(timestampToTransactionsMapping.keys.sorted(by: >)), id: \.self) { key in
                     HistoryList(
-                        temporaryTimestamp: String(timestamps[i]),
-                        transactions: timestampToTransactionsMapping[String(timestamps[i])]!,
+                        temporaryTimestamp: key,
+                        transactions: timestampToTransactionsMapping[key]!,
                         usersDateils: transactionsSummary.usersDetails
                     )
                 }
