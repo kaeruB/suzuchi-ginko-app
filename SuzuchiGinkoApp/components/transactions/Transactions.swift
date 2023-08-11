@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Transactions: View {
+    @State private var isPresentingNewTransactionView = false
+    
     let pairId: String
     var transactionsSummary: TransactionsSummary
     
@@ -30,10 +32,29 @@ struct Transactions: View {
             History(transactionsSummary: transactionsSummary)
         }
         .toolbar {
-            Button(action: {}) {
+            Button(action: {
+                isPresentingNewTransactionView = true
+            }) {
                 Image(systemName: "plus")
             }
             .accessibilityLabel("New Transaction")
+        }
+        .sheet(isPresented: $isPresentingNewTransactionView) {
+            NavigationStack {
+                NewTransactionView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingNewTransactionView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Add") {
+                                isPresentingNewTransactionView = false
+                            }
+                        }
+                    }
+            }
         }
     }
 }

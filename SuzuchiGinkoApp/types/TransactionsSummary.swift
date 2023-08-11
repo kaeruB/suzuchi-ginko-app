@@ -15,6 +15,14 @@ struct Transaction: Identifiable {
     let id: UUID
     var pairId: String
     var amount: Double
+    var amountAsString: String {
+        get {
+            String(amount)
+        }
+        set {
+            amount = Double(newValue) ?? 0
+        }
+    }
     var userWhoPaid: String
     var category: Category
     var description: String
@@ -34,6 +42,19 @@ struct Transaction: Identifiable {
 struct User {
     var name: String
     var avatar: String
+}
+
+extension Transaction {
+    static var emptyTransaction: Transaction {
+        Transaction(
+            pairId: "",
+            amount: 0,
+            userWhoPaid: "",
+            category: Category.Shopping,
+            description: "",
+            timestamp: 0
+        )
+    }
 }
 
 struct TransactionsSummary {
