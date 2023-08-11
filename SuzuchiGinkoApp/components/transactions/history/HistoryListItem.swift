@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct HistoryListItem: View {
-    @State var showTransactionModal = false
-    
     let transaction: Transaction
+//    @Binding var transaction: Transaction
     let usersDateils: [String : User]
+    
+    @State private var editedTransaction = Transaction.emptyTransaction
+    @State private var showTransactionModal = false
     
     var body: some View {
         Button {
+            if (!showTransactionModal) {
+                editedTransaction = transaction
+            }
             showTransactionModal.toggle()
         } label: {
             HStack {
@@ -45,12 +50,25 @@ struct HistoryListItem: View {
                     .foregroundColor(.black)
             }
         }
-        .sheet(isPresented: $showTransactionModal, content: {
-            TransactionEditForm(
-                transaction: transaction,
-                usersDateils: usersDateils
-            )
-        })
+        .sheet(isPresented: $showTransactionModal) {
+            NavigationStack {
+                NewTransactionView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                showTransactionModal = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Add") {
+                                showTransactionModal = false
+                                editedTransaction = transaction
+                            }
+                        }
+                    }
+            }
+        }
+        
         .padding()
     }
 }
@@ -58,6 +76,7 @@ struct HistoryListItem: View {
 #Preview {
     HistoryListItem(
         transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
+//        transaction: .constant(TransactionsSummary.TransactionsSummaryMock.transactions[0]),
         usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )
 }
