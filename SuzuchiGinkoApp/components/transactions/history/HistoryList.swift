@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HistoryList: View {
-    let temporaryTimestamp: String
+    let timestamp: String
     let transactions: [Transaction]
     let usersDateils: [String : User]
     
     var body: some View {
         VStack {
-            Text("\(parseDateObjToDateString(timestamp: Double(temporaryTimestamp)!))")
+            Text("\(parseDateObjToDateString(timestamp: Double(timestamp)!))")
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -33,7 +33,7 @@ struct HistoryList: View {
 
 #Preview {
     HistoryList(
-        temporaryTimestamp: String(TransactionsSummary.TransactionsSummaryMock.transactions[0].timestamp),
+        timestamp: String(TransactionsSummary.TransactionsSummaryMock.transactions[0].timestamp),
         transactions: TransactionsSummary.TransactionsSummaryMock.transactions,
         usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )

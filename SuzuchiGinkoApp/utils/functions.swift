@@ -42,3 +42,11 @@ func provideTransactionsMock(pariId: String) -> TransactionsSummary {
     }
     return TransactionsSummary.TransactionsSummaryMock2
 }
+
+func parseTransactionData(data: TransactionsSummary) -> TransactionSummaryParsed {
+    return TransactionSummaryParsed(
+        timestampToTransactionsMapping: createTimestampToTransactionsMapping(transactions: data.transactions),
+        usersDetails: data.usersDetails,
+        summary: data.summary
+    )
+}

@@ -108,3 +108,41 @@ extension TransactionsSummary {
         ]
     )
 }
+
+
+extension TransactionSummaryParsed {
+    static let ParsedData = TransactionSummaryParsed(
+        timestampToTransactionsMapping:  [
+            "1694649600000": [
+                Transaction(
+                    id: UUID(),
+                    pairId: "userWithId1_userWithId3",
+                    amount: 10.0,
+                    userWhoPaid: "userWithId3",
+                    category: SuzuchiGinkoApp.Category.Shopping,
+                    description: "Candy",
+                    timestamp: 1694649600000
+                )
+            ],
+            "1695168000000": [
+                Transaction(
+                    id: UUID(),
+                    pairId: "userWithId1_userWithId3",
+                    amount: 200.0,
+                    userWhoPaid: "userWithId1",
+                    category: SuzuchiGinkoApp.Category.Shopping,
+                    description: "Onigiri",
+                    timestamp: 1695168000000
+                )
+            ]
+        ],
+        usersDetails: [
+            "userWithId1": User(name: "User1", avatar: "avatar1"),
+            "userWithId3": User(name: "User3", avatar: "avatar2"),
+        ],
+        summary: [
+            "userWithId1": 200,
+            "userWithId3": 10
+        ]
+    )
+}

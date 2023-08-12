@@ -11,25 +11,30 @@ struct Transactions: View {
     @State private var isPresentingNewTransactionView = false
     
     let pairId: String
-    var transactionsSummary: TransactionsSummary
+    var parsedTransactionSummary: TransactionSummaryParsed
     
     init(pairId: String) {
         self.pairId = pairId
         
         // todo replace this with query
-        transactionsSummary = provideTransactionsMock(pariId: pairId)
+        let transactionSummaryData = provideTransactionsMock(pariId: pairId)
+        
+        parsedTransactionSummary = parseTransactionData(data: transactionSummaryData)
     }
     
     var body: some View {
         VStack {
             Summary(
-                pairsSummary: transactionsSummary.summary,
+                pairsSummary: parsedTransactionSummary.summary,
                 pairId: pairId,
-                usersDetails: transactionsSummary.usersDetails
+                usersDetails: parsedTransactionSummary.usersDetails
             )
                 .padding(.bottom, 16)
             
-            History(transactionsSummary: transactionsSummary)
+            History(
+                timestampToTransactionsMapping: parsedTransactionSummary.timestampToTransactionsMapping,
+                usersDetails: parsedTransactionSummary.usersDetails
+            )
         }
         .toolbar {
             Button(action: {

@@ -63,3 +63,10 @@ struct TransactionsSummary {
     var summary: [String : Double]
     var usersDetails: [String : User]
 }
+
+
+struct TransactionSummaryParsed {
+    var timestampToTransactionsMapping: [String: [Transaction]]
+    var usersDetails: [String : User]
+    var summary: [String : Double]
+}

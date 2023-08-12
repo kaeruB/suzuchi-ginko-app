@@ -8,23 +8,17 @@
 import SwiftUI
 
 struct History: View {
-    let transactionsSummary: TransactionsSummary
+    let timestampToTransactionsMapping: [String: [Transaction]]
+    let usersDetails: [String: User]
     
-    var timestampToTransactionsMapping: [String: [Transaction]]
-    
-    init(transactionsSummary: TransactionsSummary) {
-        self.transactionsSummary = transactionsSummary
-        timestampToTransactionsMapping = createTimestampToTransactionsMapping(transactions: transactionsSummary.transactions)
-    }
-     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
                 ForEach(Array(timestampToTransactionsMapping.keys.sorted(by: >)), id: \.self) { key in
                     HistoryList(
-                        temporaryTimestamp: key,
+                        timestamp: key,
                         transactions: timestampToTransactionsMapping[key]!,
-                        usersDateils: transactionsSummary.usersDetails
+                        usersDateils: usersDetails
                     )
                 }
                 
@@ -35,5 +29,8 @@ struct History: View {
 }
 
 #Preview {
-    History(transactionsSummary: TransactionsSummary.TransactionsSummaryMock)
+    History(
+        timestampToTransactionsMapping: TransactionSummaryParsed.ParsedData.timestampToTransactionsMapping,
+        usersDetails: TransactionSummaryParsed.ParsedData.usersDetails
+    )
 }
