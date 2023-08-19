@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HistoryListItem: View {
     let transaction: Transaction
-//    @Binding var transaction: Transaction
     let usersDateils: [String : User]
     
     @State private var editedTransaction = Transaction.emptyTransaction
@@ -52,7 +51,7 @@ struct HistoryListItem: View {
         }
         .sheet(isPresented: $showTransactionModal) {
             NavigationStack {
-                NewTransactionView()
+                NewTransactionView(transaction: $editedTransaction)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -76,7 +75,6 @@ struct HistoryListItem: View {
 #Preview {
     HistoryListItem(
         transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
-//        transaction: .constant(TransactionsSummary.TransactionsSummaryMock.transactions[0]),
         usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )
 }

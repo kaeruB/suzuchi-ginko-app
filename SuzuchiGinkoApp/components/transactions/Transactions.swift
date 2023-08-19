@@ -46,7 +46,7 @@ struct Transactions: View {
         }
         .sheet(isPresented: $isPresentingNewTransactionView) {
             NavigationStack {
-                NewTransactionView()
+                NewTransactionView(transaction: .constant(Transaction.emptyTransaction))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
