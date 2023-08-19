@@ -11,28 +11,99 @@ struct TransactionFormView: View {
     @Binding var transaction: Transaction
     
     var body: some View {
-        Form {
-            Section(header: Text("New transaction")){
+        VStack {
             
-                HStack {
-                    TextField("Amount", text: $transaction.amountAsString)
-                    
-                    Spacer()
-                    
-                    Button {
-                        //
-                    } label: {
-                        Text("Split")
-                        Image(systemName: "divide")
-                    }
-                    .font(.title3)
-                    .background(.gray)
-                    .foregroundColor(.white)
-                    .buttonStyle(.bordered)
-                    .cornerRadius(10)
+            HStack {
+                Button {
+                    //
+                } label: {
+                    Text("Delete")
+                    Image(systemName: "trash")
                 }
+                .font(.title3)
+                .background(.red)
+                .foregroundColor(.white)
+                .buttonStyle(.bordered)
+                .cornerRadius(10)
                 
-                TextField("Memo", text: $transaction.description)
+                Spacer()
+                
+                
+            }
+            
+            Form {
+                Section(header: Text("Amount")){
+                    
+                    HStack {
+                        TextField("Amount", text: $transaction.amountAsString)
+                        
+                        Spacer()
+                        
+                        Button {
+                            //
+                        } label: {
+                            Text("Split")
+                            Image(systemName: "divide")
+                        }
+                        .font(.title3)
+                        .background(.gray)
+                        .foregroundColor(.white)
+                        .buttonStyle(.bordered)
+                        .cornerRadius(10)
+                    }
+                    
+                    
+                    HStack {
+                        Text("Paid by")
+                        Spacer()
+                        
+                        // todo user id
+                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails["userWithId1"]!.avatar)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 72)
+                        
+                        
+                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails["userWithId2"]!.avatar)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 72)
+                    }
+                }
+                Section(header: Text("Details")){
+                    
+                    DatePicker(
+                            "Date",
+                            selection: $transaction.timestampAsDate,
+                            displayedComponents: [.date]
+                        )
+                    
+                    
+                        HStack {
+                            Text("Category")
+                            
+                            Spacer()
+                            
+                            Image(systemName: "cart")
+                                .font(.title)
+                    
+                            Image(systemName: "house")
+                                .font(.title)
+                    
+                            Image(systemName: "pill")
+                                .font(.title)
+                    
+                            Image(systemName: "face.smiling")
+                                .font(.title)
+                    
+                            Image(systemName: "questionmark")
+                                .font(.title)
+                    
+                        }
+                    
+                    
+                    TextField("Memo", text: $transaction.description)
+                }
             }
         }
     }

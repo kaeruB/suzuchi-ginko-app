@@ -26,9 +26,19 @@ struct Transaction: Identifiable {
     var userWhoPaid: String
     var category: Category
     var description: String
-    var timestamp: Int
+    var timestamp: TimeInterval
+    var timestampAsDate: Date {
+        get {
+            let dateTimestamp = timestamp / 1000
+            return Date(timeIntervalSince1970: TimeInterval(dateTimestamp))
+        }
+        
+        set {
+            timestamp = newValue.timeIntervalSince1970 * 1000
+        }
+    }
     
-    init(id: UUID = UUID(), pairId: String, amount: Double, userWhoPaid: String, category: Category, description: String, timestamp: Int) {
+    init(id: UUID = UUID(), pairId: String, amount: Double, userWhoPaid: String, category: Category, description: String, timestamp: TimeInterval) {
         self.id = id
         self.pairId = pairId
         self.amount = amount
@@ -52,7 +62,7 @@ extension Transaction {
             userWhoPaid: "",
             category: Category.Shopping,
             description: "",
-            timestamp: 0
+            timestamp: NSDate().timeIntervalSince1970 * 1000
         )
     }
 }
