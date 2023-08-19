@@ -1,5 +1,5 @@
 //
-//  PairsLayout.swift
+//  PairsView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 30/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Pairs: View {
+struct PairsView: View {
     @State private var userId: String = ""
     
     let pairsSummaries: [String: [String : Double]]
@@ -53,9 +53,9 @@ struct Pairs: View {
                 VStack(spacing: 40) {
                         ForEach(0..<pairsKeys.count) { i in
                             NavigationLink(
-                                destination: Transactions(pairId: pairsKeys[i])
+                                destination: TransactionsView(pairId: pairsKeys[i])
                             ) {
-                                Summary(
+                                SummaryView(
                                     pairsSummary: pairsSummaries[pairsKeys[i]]!,
                                     pairId: pairsKeys[i],
                                     usersDetails: PairsSummary.PairsSummaryMock.usersDetails
@@ -75,7 +75,7 @@ struct Pairs: View {
 }
 
 #Preview {
-    Pairs(
+    PairsView(
         pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
         pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
     )

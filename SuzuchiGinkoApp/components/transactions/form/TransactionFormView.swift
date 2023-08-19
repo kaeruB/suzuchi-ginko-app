@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewTransactionView: View {
+struct TransactionFormView: View {
     @Binding var transaction: Transaction
     
     var body: some View {
@@ -39,5 +39,5 @@ struct NewTransactionView: View {
 }
 
 #Preview {
-    NewTransactionView(transaction: .constant(Transaction.emptyTransaction))
+    TransactionFormView(transaction: .constant(Transaction.emptyTransaction))
 }

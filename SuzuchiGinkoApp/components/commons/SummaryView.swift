@@ -1,5 +1,5 @@
 //
-//  SummaryLayout.swift
+//  SummaryView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 22/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Summary: View {
+struct SummaryView: View {
     @State var showTransactionsLayout = false
     
     var difference: String
@@ -66,7 +66,7 @@ struct Summary: View {
 }
 
 #Preview {
-    Summary(
+    SummaryView(
         pairsSummary: PairsSummary.PairsSummaryMock.pairsSummaries["userWithId1_userWithId2"]!,
         pairId: "userWithId1_userWithId2",
         usersDetails: PairsSummary.PairsSummaryMock.usersDetails

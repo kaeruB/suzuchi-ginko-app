@@ -1,5 +1,5 @@
 //
-//  Header.swift
+//  HeaderView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 30/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Header: View {
+struct HeaderView: View {
     var body: some View {
         HStack {
             Text("Suzuchi Ginko")
@@ -41,5 +41,5 @@ struct Header: View {
 }
 
 #Preview {
-    Header()
+    HeaderView()
 }

@@ -11,9 +11,9 @@ struct TopView: View {
 
     var body: some View {
         VStack {
-            Header()
+            HeaderView()
 
-            Pairs(
+            PairsView(
                 pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
                 pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
             )

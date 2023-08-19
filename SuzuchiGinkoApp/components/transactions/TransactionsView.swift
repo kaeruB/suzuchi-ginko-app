@@ -1,5 +1,5 @@
 //
-//  Transactions.swift
+//  TransactionsView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 30/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Transactions: View {
+struct TransactionsView: View {
     @State private var isPresentingNewTransactionView = false
     
     let pairId: String
@@ -24,14 +24,14 @@ struct Transactions: View {
     
     var body: some View {
         VStack {
-            Summary(
+            SummaryView(
                 pairsSummary: parsedTransactionSummary.summary,
                 pairId: pairId,
                 usersDetails: parsedTransactionSummary.usersDetails
             )
                 .padding(.bottom, 16)
             
-            History(
+            HistoryView(
                 timestampToTransactionsMapping: parsedTransactionSummary.timestampToTransactionsMapping,
                 usersDetails: parsedTransactionSummary.usersDetails
             )
@@ -46,7 +46,7 @@ struct Transactions: View {
         }
         .sheet(isPresented: $isPresentingNewTransactionView) {
             NavigationStack {
-                NewTransactionView(transaction: .constant(Transaction.emptyTransaction))
+                TransactionFormView(transaction: .constant(Transaction.emptyTransaction))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -65,7 +65,7 @@ struct Transactions: View {
 }
 
 #Preview {
-    Transactions(
+    TransactionsView(
         pairId: "userWithId1_userWithId2"
     )
 }

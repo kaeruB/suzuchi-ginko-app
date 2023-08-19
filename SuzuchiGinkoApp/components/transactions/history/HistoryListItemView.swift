@@ -1,5 +1,5 @@
 //
-//  HistoryListItem.swift
+//  HistoryListItemView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 22/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryListItem: View {
+struct HistoryListItemView: View {
     let transaction: Transaction
     let usersDateils: [String : User]
     
@@ -51,7 +51,7 @@ struct HistoryListItem: View {
         }
         .sheet(isPresented: $showTransactionModal) {
             NavigationStack {
-                NewTransactionView(transaction: $editedTransaction)
+                TransactionFormView(transaction: $editedTransaction)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -73,7 +73,7 @@ struct HistoryListItem: View {
 }
 
 #Preview {
-    HistoryListItem(
+    HistoryListItemView(
         transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
         usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )

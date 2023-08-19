@@ -1,5 +1,5 @@
 //
-//  History.swift
+//  HistoryView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 23/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct History: View {
+struct HistoryView: View {
     let timestampToTransactionsMapping: [String: [Transaction]]
     let usersDetails: [String: User]
     
@@ -15,7 +15,7 @@ struct History: View {
         ScrollView {
             VStack(spacing: 20) {
                 ForEach(Array(timestampToTransactionsMapping.keys.sorted(by: >)), id: \.self) { key in
-                    HistoryList(
+                    HistoryListView(
                         timestamp: key,
                         transactions: timestampToTransactionsMapping[key]!,
                         usersDateils: usersDetails
@@ -29,7 +29,7 @@ struct History: View {
 }
 
 #Preview {
-    History(
+    HistoryView(
         timestampToTransactionsMapping: TransactionSummaryParsed.ParsedData.timestampToTransactionsMapping,
         usersDetails: TransactionSummaryParsed.ParsedData.usersDetails
     )

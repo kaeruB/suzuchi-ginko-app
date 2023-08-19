@@ -1,5 +1,5 @@
 //
-//  HistoryList.swift
+//  HistoryListView.swift
 //  SuzuchiGinkoApp
 //
 //  Created by Agata Sasaki on 23/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryList: View {
+struct HistoryListView: View {
     let timestamp: String
     let transactions: [Transaction]
     let usersDateils: [String : User]
@@ -21,7 +21,7 @@ struct HistoryList: View {
             
             VStack() {
                 ForEach(transactions) { transaction in
-                    HistoryListItem(
+                    HistoryListItemView(
                         transaction: transaction,
                         usersDateils: usersDateils
                     )
@@ -32,7 +32,7 @@ struct HistoryList: View {
 }
 
 #Preview {
-    HistoryList(
+    HistoryListView(
         timestamp: String(TransactionsSummary.TransactionsSummaryMock.transactions[0].timestamp),
         transactions: TransactionsSummary.TransactionsSummaryMock.transactions,
         usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
