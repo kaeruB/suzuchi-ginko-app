@@ -12,7 +12,6 @@ struct TransactionFormView: View {
     
     var body: some View {
         VStack {
-            
             HStack {
                 Button {
                     //
@@ -27,9 +26,7 @@ struct TransactionFormView: View {
                 .cornerRadius(10)
                 
                 Spacer()
-                
-                
-            }
+            }.padding(.leading)
             
             Form {
                 Section(header: Text("Amount")){

@@ -59,7 +59,7 @@ struct HistoryListItemView: View {
                             }
                         }
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Add") {
+                            Button("Update") {
                                 showTransactionModal = false
                                 editedTransaction = transaction
                             }
