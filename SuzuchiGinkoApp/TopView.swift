@@ -14,8 +14,7 @@ struct TopView: View {
             HeaderView()
 
             PairsView(
-                pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
-                pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
+                pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries
             )
             .padding()
         }

@@ -11,7 +11,6 @@ struct PairsView: View {
     @State private var userId: String = ""
     
     let pairsSummaries: [String: [String : Double]]
-    let pairsKeys: [String]
     
     var body: some View {
         NavigationStack {
@@ -51,17 +50,18 @@ struct PairsView: View {
                 
                 
                 VStack(spacing: 40) {
-                        ForEach(0..<pairsKeys.count) { i in
-                            NavigationLink(
-                                destination: TransactionsView(pairId: pairsKeys[i])
-                            ) {
-                                SummaryView(
-                                    pairsSummary: pairsSummaries[pairsKeys[i]]!,
-                                    pairId: pairsKeys[i],
-                                    usersDetails: PairsSummary.PairsSummaryMock.usersDetails
-                                )
-                            }
+                    ForEach(Array(pairsSummaries.keys), id: \.self) {
+                        key in
+                        NavigationLink(
+                            destination: TransactionsView(pairId: key)
+                        ) {
+                            SummaryView(
+                                pairsSummary: pairsSummaries[key]!,
+                                pairId: key,
+                                usersDetails: PairsSummary.PairsSummaryMock.usersDetails
+                            )
                         }
+                    }
                 }
             }
             .navigationTitle("Dashboard")
@@ -76,7 +76,6 @@ struct PairsView: View {
 
 #Preview {
     PairsView(
-        pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries,
-        pairsKeys: [String](PairsSummary.PairsSummaryMock.pairsSummaries.keys)
+        pairsSummaries: PairsSummary.PairsSummaryMock.pairsSummaries
     )
 }
