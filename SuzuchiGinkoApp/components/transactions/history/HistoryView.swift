@@ -18,7 +18,7 @@ struct HistoryView: View {
                     HistoryListView(
                         timestamp: key,
                         transactions: timestampToTransactionsMapping[key]!,
-                        usersDateils: usersDetails
+                        usersDetails: usersDetails
                     )
                 }
                 

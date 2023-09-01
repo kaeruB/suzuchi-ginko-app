@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HistoryListItemView: View {
     let transaction: Transaction
-    let usersDateils: [String : User]
+    let usersDetails: [String : User]
     
     @State private var editedTransaction = Transaction.emptyTransaction
     @State private var showTransactionModal = false
@@ -24,7 +24,7 @@ struct HistoryListItemView: View {
             HStack {
                 HStack {
                     ZStack {
-                        Image(usersDateils[transaction.userWhoPaid]!.avatar)
+                        Image(usersDetails[transaction.userWhoPaid]!.avatar)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 40)
@@ -51,7 +51,7 @@ struct HistoryListItemView: View {
         }
         .sheet(isPresented: $showTransactionModal) {
             NavigationStack {
-                TransactionFormView(transaction: $editedTransaction)
+                TransactionFormView(transaction: $editedTransaction, usersDetails: usersDetails)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -75,6 +75,6 @@ struct HistoryListItemView: View {
 #Preview {
     HistoryListItemView(
         transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
-        usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
+        usersDetails: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )
 }

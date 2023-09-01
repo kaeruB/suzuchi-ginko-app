@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TransactionFormView: View {
     @Binding var transaction: Transaction
+    let usersDetails: [String : User]
     
     var body: some View {
         VStack {
@@ -54,17 +55,13 @@ struct TransactionFormView: View {
                         Text("Paid by")
                         Spacer()
                         
-                        // todo user id
-                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails["userWithId1"]!.avatar)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 72)
-                        
-                        
-                        Image(TransactionsSummary.TransactionsSummaryMock.usersDetails["userWithId2"]!.avatar)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 72)
+                        ForEach(Array(usersDetails.keys), id: \.self) {
+                            key in
+                            Image(usersDetails[key]!.avatar)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 72)
+                        }
                     }
                 }
                 Section(header: Text("Details")){
@@ -107,5 +104,8 @@ struct TransactionFormView: View {
 }
 
 #Preview {
-    TransactionFormView(transaction: .constant(Transaction.emptyTransaction))
+    TransactionFormView(
+        transaction: .constant(Transaction.emptyTransaction),
+        usersDetails: TransactionsSummary.TransactionsSummaryMock.usersDetails
+    )
 }

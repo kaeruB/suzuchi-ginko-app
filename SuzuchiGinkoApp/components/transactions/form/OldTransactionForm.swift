@@ -15,7 +15,7 @@ struct TransactionEditForm: View {
 //    @FocusState private var emailFieldIsFocused: Bool = false
     
     let transaction: Transaction
-    let usersDateils: [String : User]
+    let usersDetails: [String : User]
     
     var body: some View {
         VStack {
@@ -183,6 +183,6 @@ struct TransactionEditForm: View {
 #Preview {
     TransactionEditForm(
         transaction: TransactionsSummary.TransactionsSummaryMock.transactions[0],
-        usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
+        usersDetails: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )
 }

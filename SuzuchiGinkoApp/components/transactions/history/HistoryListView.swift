@@ -10,7 +10,7 @@ import SwiftUI
 struct HistoryListView: View {
     let timestamp: String
     let transactions: [Transaction]
-    let usersDateils: [String : User]
+    let usersDetails: [String : User]
     
     var body: some View {
         VStack {
@@ -23,7 +23,7 @@ struct HistoryListView: View {
                 ForEach(transactions) { transaction in
                     HistoryListItemView(
                         transaction: transaction,
-                        usersDateils: usersDateils
+                        usersDetails: usersDetails
                     )
                 }
             }
@@ -35,6 +35,6 @@ struct HistoryListView: View {
     HistoryListView(
         timestamp: String(TransactionsSummary.TransactionsSummaryMock.transactions[0].timestamp),
         transactions: TransactionsSummary.TransactionsSummaryMock.transactions,
-        usersDateils: TransactionsSummary.TransactionsSummaryMock.usersDetails
+        usersDetails: TransactionsSummary.TransactionsSummaryMock.usersDetails
     )
 }
