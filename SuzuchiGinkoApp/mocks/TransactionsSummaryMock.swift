@@ -14,7 +14,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 30240,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Hotel Nagano",
                 timestamp: 1695168000000
             ),
@@ -22,7 +22,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 27800,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Hotel Tokio",
                 timestamp: 1694649600000
             ),
@@ -30,7 +30,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 10170,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "spring japan TokioNarita -> Hiroshima",
                 timestamp: 1689379200000
             ),
@@ -38,7 +38,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 16187,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Hotel Hiroshima",
                 timestamp: 1689379200000
             ),
@@ -46,7 +46,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 6502.5,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Hotel Nagoya",
                 timestamp: 1689379200000
             ),
@@ -54,7 +54,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 18850,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "peach Sapporo -> Narita",
                 timestamp: 1688860800000
             ),
@@ -62,7 +62,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId2",
                 amount: 7350,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "peach Narita -> Sapporo",
                 timestamp: 1688688000000
             )
@@ -84,7 +84,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId3",
                 amount: 200,
                 userWhoPaid: "userWithId1",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Onigiri",
                 timestamp: 1695168000000
             ),
@@ -92,7 +92,7 @@ extension TransactionsSummary {
                 pairId: "userWithId1_userWithId3",
                 amount: 10,
                 userWhoPaid: "userWithId3",
-                category: Category.Shopping,
+                category: Category.shopping,
                 description: "Candy",
                 timestamp: 1694649600000
             )
@@ -119,7 +119,7 @@ extension TransactionSummaryParsed {
                     pairId: "userWithId1_userWithId3",
                     amount: 10.0,
                     userWhoPaid: "userWithId3",
-                    category: SuzuchiGinkoApp.Category.Shopping,
+                    category: SuzuchiGinkoApp.Category.shopping,
                     description: "Candy",
                     timestamp: 1694649600000
                 )
@@ -130,7 +130,7 @@ extension TransactionSummaryParsed {
                     pairId: "userWithId1_userWithId3",
                     amount: 200.0,
                     userWhoPaid: "userWithId1",
-                    category: SuzuchiGinkoApp.Category.Shopping,
+                    category: SuzuchiGinkoApp.Category.shopping,
                     description: "Onigiri",
                     timestamp: 1695168000000
                 )

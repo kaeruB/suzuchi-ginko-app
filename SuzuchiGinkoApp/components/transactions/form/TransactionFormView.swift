@@ -79,7 +79,7 @@ struct TransactionFormView: View {
                                     .overlay(RoundedRectangle(cornerRadius: 25)
                                         .stroke(lineWidth: 3)
                                         .opacity(0.5))
-                                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 2)
                             } else {
                                 Image(usersDetails[key]!.avatar)
                                     .resizable()
@@ -106,21 +106,23 @@ struct TransactionFormView: View {
                             
                             Spacer()
                             
-                            Image(systemName: "cart")
-                                .font(.title)
-                    
-                            Image(systemName: "house")
-                                .font(.title)
-                    
-                            Image(systemName: "pill")
-                                .font(.title)
-                    
-                            Image(systemName: "face.smiling")
-                                .font(.title)
-                    
-                            Image(systemName: "questionmark")
-                                .font(.title)
-                    
+                            ForEach(0..<5) { i in
+                                if (Category.allCases[i].rawValue == transaction.category.rawValue) {
+                                    Image(systemName: CategoryIcon.allCases[i].rawValue)
+                                        .font(.title)
+                                        .overlay(Circle()
+                                            .stroke(lineWidth: 3)
+                                            .opacity(0.5)
+                                        )
+                                        
+                                } else {
+                                    Image(systemName: CategoryIcon.allCases[i].rawValue)
+                                        .font(.title)
+                                        .onTapGesture {
+                                            transaction.category = Category.allCases[i]
+                                        }
+                                }
+                            }
                         }
                     
                     

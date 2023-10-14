@@ -8,7 +8,19 @@
 import Foundation
 
 enum Category: String, CaseIterable {
-    case Shopping = "Shopping"
+    case shopping = "Shopping"
+    case home = "Home"
+    case health = "Health"
+    case entertainment = "Entertainment"
+    case other = "Other"
+}
+
+enum CategoryIcon: String, CaseIterable {
+    case shopping = "cart"
+    case home = "house"
+    case health = "pill"
+    case entertainment = "face.smiling"
+    case other = "questionmark"
 }
 
 struct Transaction: Identifiable {
@@ -60,7 +72,7 @@ extension Transaction {
             pairId: "",
             amount: 0,
             userWhoPaid: "",
-            category: Category.Shopping,
+            category: Category.shopping,
             description: "",
             timestamp: NSDate().timeIntervalSince1970 * 1000
         )
