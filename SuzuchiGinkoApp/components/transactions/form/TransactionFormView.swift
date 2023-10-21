@@ -53,7 +53,7 @@ struct TransactionFormView: View {
                         Spacer()
                         
                         Button {
-                            //
+                            transaction.amount /= 2
                         } label: {
                             Text("Split")
                             Image(systemName: "divide")
